@@ -3,11 +3,12 @@ import { Grid } from "@material-ui/core";
 import youtube from "./api/youtube.js"
 import SearchBar from "./components/SearchBar.jsx"
 import VideoDetails from "./components/VideoDetails.jsx"
+import VideoList from "./components/VideoList.jsx";
 
 function App(){
     const [videoState,setVideo] = React.useState(
         {
-            video:[],
+            videos:[],
             selectedVideo:null
         }
     );
@@ -24,7 +25,7 @@ function App(){
         setVideo(function(prev){
             return(
                 prev = {
-                    video:response.data.items,
+                    videos:response.data.items,
                     selectedVideo:response.data.items[0]
                 }
             );
@@ -45,6 +46,7 @@ function App(){
                         </Grid>
                         <Grid item xs={4}>
                             {/*Video List*/}
+                            <VideoList videos={videoState.videos}/>
                         </Grid>
                     </Grid>
                 </Grid>
