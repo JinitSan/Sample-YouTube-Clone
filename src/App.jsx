@@ -21,7 +21,6 @@ function App(){
             q:searchTerm
             }
         });
-
         setVideo(function(prev){
             return(
                 prev = {
