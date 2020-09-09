@@ -32,6 +32,17 @@ function App(){
         });
     }
 
+    const onVideoSelect = function(video){
+        setVideo(function(prev){
+            return(
+                prev = {
+                    videos:prev.videos,
+                    selectedVideo:video
+                }
+            );
+        });
+    }
+
     return(
         <Grid justify="center" container spacing={10}>
                 <Grid item xs={12}>
@@ -46,7 +57,7 @@ function App(){
                         </Grid>
                         <Grid item xs={4}>
                             {/*Video List*/}
-                            <VideoList videos={videoState.videos}/>
+                            <VideoList videos={videoState.videos} onVideoSelect={onVideoSelect}/>
                         </Grid>
                     </Grid>
                 </Grid>

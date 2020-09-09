@@ -9,7 +9,7 @@ function VideoDetails(props){
         const videoSrc = `https://www.youtube.com/embed/${props.video.snippet.thumbnails.default.url.split("/")[4]}`
         return (
             <React.Fragment>
-                <Paper elevation={6} style={{ height: "100%"}}>
+                <Paper elevation={6} style={{ height: "50%"}}>
                     <iframe
                     frameBorder="0"
                     height="100%"

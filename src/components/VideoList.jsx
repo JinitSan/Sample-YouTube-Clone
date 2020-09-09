@@ -4,10 +4,14 @@ import VideoItem from "./VideoItem.jsx"
 
 function VideoList(props){
     const listOfVideos = props.videos.map(function(video,id){
-        return <VideoItem key={id} video={video}/>
+        return <VideoItem key={id} video={video} onVideoSelect={props.onVideoSelect}/>
     })
 
-    return listOfVideos;
+    return (
+        <Grid container spacing={10}>
+            {listOfVideos}
+        </Grid>
+    );
 }
 
 export default VideoList;
