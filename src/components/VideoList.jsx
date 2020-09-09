@@ -8,7 +8,7 @@ function VideoList(props){
     })
 
     return (
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
             {listOfVideos}
         </Grid>
     );

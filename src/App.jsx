@@ -31,6 +31,9 @@ function App(){
             );
         });
     }
+    React.useEffect(function(){
+        handleSubmit("javascript");
+    });
 
     const onVideoSelect = function(video){
         setVideo(function(prev){
