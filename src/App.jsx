@@ -16,6 +16,8 @@ function App(){
         }
     );
 
+    console.log(process.env.API_KEY)
+
     const handleSubmit = async function(searchTerm){
         const response = await youtube.get("search",{
             params:{
