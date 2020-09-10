@@ -5,6 +5,9 @@ import SearchBar from "./components/SearchBar.jsx"
 import VideoDetails from "./components/VideoDetails.jsx"
 import VideoList from "./components/VideoList.jsx";
 
+require('dotenv').config(); 
+
+
 function App(){
     const [videoState,setVideo] = React.useState(
         {
@@ -18,7 +21,7 @@ function App(){
             params:{
             part:'snippet',
             maxResults:5,
-            key:'AIzaSyBMFLEAMkrM7RWMOPs1gGoADqwTAsNUjNs',
+            key:process.env.API_KEY,
             q:searchTerm
             }
         });
@@ -32,7 +35,7 @@ function App(){
         });
     }
     React.useEffect(function(){
-        handleSubmit("javascript");
+        handleSubmit("react");
     });
 
     const onVideoSelect = function(video){
